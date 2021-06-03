@@ -110,9 +110,19 @@ namespace Cờ_cá_ngựa
 
         private void resolve(ManagePacket packet, Socket current )
         {
+
             switch (packet.msgtype)
             {
                 case "User":
+                    string[] data = packet.msgcontent.Split(':');
+                    string name = "";
+                    if (data.Length == 2)
+                    {
+                        if(data[0] == "connect")
+                        {
+                            name = data[1];
+                        } 
+                    }
 
                     break;
                 case "Room":
